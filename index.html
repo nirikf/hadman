@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+<title>SEED</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:#07040f;overflow:hidden;touch-action:none;user-select:none}
+#wrap{position:fixed;inset:0;display:grid;place-items:center}
+canvas{image-rendering:pixelated;display:block;background:#07040f}
+#err{position:fixed;top:0;left:0;right:0;z-index:9;background:#2a0808;color:#ff9a9a;font:12px monospace;padding:8px;white-space:pre-wrap;display:none}
+</style>
+</head>
+<body>
+<div id="wrap"><canvas id="cv" width="320" height="180"></canvas></div>
+<pre id="err"></pre>
+<script>
+window.onerror=function(m,s,l){var e=document.getElementById('err');e.style.display='block';e.textContent+='ОШИБКА: '+m+' (строка '+l+')\n'};
+</script>
+<script src="engine.js"></script>
+<script src="game.js"></script>
+<script>E.init();</script>
+</body>
+</html>
